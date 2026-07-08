@@ -94,31 +94,27 @@
 
       <details class="faq-item">
         <summary>Was kostet die Beratung?</summary>
-        <p>Wir bieten drei Beratungspakete an, die sich nach Umfang und Intensität unterscheiden:</p>
         <div class="faq-pakete">
-          <div class="faq-paket">
-            <p class="faq-paket-name">Aufwind Start</p>
-            <p class="faq-paket-preis">390 € <span>· ca. 4 Wochen</span></p>
-            <p class="faq-paket-desc">2 Sitzungen à 90 Minuten – für erste Orientierung, Entlastung und konkrete Anliegen.</p>
+          <div class="faq-paket faq-paket--blue">
+            <p class="faq-paket-name">Kostenfreier Erstkontakt</p>
+            <p class="faq-paket-desc">In einem unverbindlichen Erstgespräch lernen wir uns kennen, klären Ihr Anliegen und besprechen, welche Form der Begleitung für Ihre Familie am sinnvollsten ist.</p>
           </div>
-          <div class="faq-paket">
-            <p class="faq-paket-name">Aufwind Entwicklung</p>
-            <p class="faq-paket-preis">890 € <span>· ca. 10–12 Wochen</span></p>
-            <p class="faq-paket-desc">Für nachhaltige Veränderung, Elternarbeit und die Bearbeitung wiederkehrender Familienthemen.</p>
+          <div class="faq-paket faq-paket--magenta">
+            <p class="faq-paket-name">Jetzt Aufwind</p>
+            <p class="faq-paket-preis">420 € <span>· 2 Sitzungen à 90 Minuten innerhalb von 4 Wochen</span></p>
+            <p class="faq-paket-desc">Für Familien, die sich erste Orientierung, Entlastung und konkrete Lösungsansätze wünschen. In zwei intensiven Beratungsgesprächen arbeiten wir an Ihrem individuellen Anliegen und entwickeln gemeinsam umsetzbare Schritte für Ihren Familienalltag.</p>
           </div>
-          <div class="faq-paket">
-            <p class="faq-paket-name">Aufwind Intensiv</p>
-            <p class="faq-paket-preis">1.590 € <span>· ca. 12 Wochen</span></p>
-            <p class="faq-paket-desc">Für Familien mit erhöhtem Unterstützungsbedarf und intensiver Begleitung im Alltag.</p>
+          <div class="faq-paket faq-paket--lila">
+            <p class="faq-paket-name">Einzelberatung</p>
+            <p class="faq-paket-desc">Auch einzelne Beratungstermine sind möglich – beispielsweise bei einem konkreten Anliegen oder zur Vertiefung nach dem Beratungspaket. Den passenden Umfang und das Honorar besprechen wir transparent im kostenfreien Erstkontakt.</p>
+          </div>
+          <div class="faq-paket faq-paket--orange">
+            <p class="faq-paket-name">Weitere Begleitung</p>
+            <p class="faq-paket-desc">Manche Familien benötigen nach dem Einstieg eine weiterführende Begleitung. In diesem Fall entwickeln wir gemeinsam ein individuelles Beratungskonzept, das sich an Ihrem Bedarf orientiert.</p>
           </div>
         </div>
-        <p>Einzeltermine sind ebenfalls möglich. Die genaue Empfehlung erfolgt nach einem kostenfreien Erstkontakt und richtet sich nach dem individuellen Bedarf Ihrer Familie.</p>
       </details>
 
-      <details class="faq-item">
-        <summary>Entstehen für Familien Kosten?</summary>
-        <p>Das hängt von der Art der Unterstützung ab. Ambulante Hilfen zur Erziehung nach SGB VIII werden in der Regel vom Jugendamt finanziert. Sprechen Sie uns gerne an – wir klären gemeinsam, welche Möglichkeiten für Sie bestehen.</p>
-      </details>
 
       <details class="faq-item">
         <summary>Ist die Beratung vertraulich?</summary>
@@ -196,4 +192,36 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container footer-inner">
-    <div class="foote
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="logo_aufwind.png" alt="Aufwind – Systemische Familienhilfen" class="footer-logo-img">
+      </div>
+    </div>    <div class="footer-contact">
+      <p>📞 0123 4567890</p>
+      <p>✉ info@aufwind-familienhilfen.de</p>
+    </div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="glossar.html">Glossar</a>
+    </div>
+  </div>
+</footer>
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scrollTop" aria-label="Nach oben" title="Nach oben">
+  <svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+  const scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('scroll-top-visible', window.scrollY > 300);
+  });
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>

@@ -244,9 +244,24 @@
   const nav = document.querySelector('.main-nav');
   burger.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('nav-open');
-    burger.classList.toggle('burger-open');
     burger.setAttribute('aria-expanded', isOpen);
+    burger.classList.toggle('burger-open', isOpen);
+  });
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !burger.contains(e.target)) {
+      nav.classList.remove('nav-open');
+      burger.classList.remove('burger-open');
+      burger.setAttribute('aria-expanded', 'false');
+    }
   });
   const scrollBtn = document.getElementById('scrollTop');
   window.addEventListener('scroll', () => {
-    scrollBtn.class
+    scrollBtn.classList.toggle('scroll-top-visible', window.scrollY > 300);
+  });
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
