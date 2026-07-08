@@ -344,12 +344,17 @@
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
+    formSuccess.style.display = 'none';
+    formError.style.display = 'none';
+    if (!form.checkValidity()) {
+      formError.style.display = 'flex';
+      formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      return;
+    }
     submitBtn.disabled = true;
     submitLabel.textContent = 'Wird gesendet …';
     submitIcon.style.display = 'none';
     submitSpinner.style.display = 'inline';
-    formSuccess.style.display = 'none';
-    formError.style.display = 'none';
 
     try {
       const formData = new FormData(form);
