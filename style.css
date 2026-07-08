@@ -1632,7 +1632,8 @@ p.form-section-label {
   .methoden-grid { grid-template-columns: repeat(2, 1fr); }
   .ja-cards     { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
-  .hero-badge { left: auto; right: 20px; bottom: 20px; }
+  .hero-badge { left: 20px; right: auto; bottom: 20px; }
+  .hero-img { min-height: 360px; }
 }
 @media (max-width: 600px) {
   .footer-inner { grid-template-columns: 1fr; gap: 20px; }
@@ -1649,6 +1650,18 @@ p.form-section-label {
   .methoden-grid { grid-template-columns: 1fr; }
   h1 { font-size: 2.8rem; }
   .hero { padding: 50px 0; }
+  .hero-img {
+    min-height: 260px;
+    border-radius: 20px;
+  }
+  .hero-badge {
+    width: 95px;
+    height: 95px;
+    font-size: 0.62rem;
+    bottom: -28px;
+    left: 10px;
+    right: auto;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; }
