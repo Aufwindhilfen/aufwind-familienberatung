@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
   <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline' https://api.web3forms.com; connect-src 'self' https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; connect-src 'self'; frame-src https://challenges.cloudflare.com; frame-ancestors 'none'; base-uri 'self';">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,9 +96,7 @@
     <!-- RECHTE SPALTE: Formular -->
     <div class="kontakt-form-wrap">
       <form class="kontakt-form" id="kontaktFormular" novalidate>
-        <input type="hidden" name="access_key" value="ac3349f7-f75f-4713-ac18-339ce33ec52a">
-        <input type="hidden" name="subject" value="Neue Anfrage über aufwind-familienhilfen.de">
-        <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+        <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
 
         <!-- ZEILE 1: Wer + Worum -->
         <div class="form-row form-row-2">
@@ -180,6 +178,9 @@
           <input type="checkbox" id="datenschutz" name="datenschutz" required>
           <label for="datenschutz">Ich habe die <a href="datenschutz.html" class="form-link" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu. *</label>
         </div>
+
+        <!-- TURNSTILE -->
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAD7HuG47nuGPcElY" style="margin-bottom: 1rem;"></div>
 
         <!-- SUBMIT -->
         <button type="submit" class="btn btn-orange form-submit" id="submitBtn">
@@ -358,7 +359,7 @@
 
     try {
       const formData = new FormData(form);
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('https://aufwind-familienhilfen.de/api/contact', {
         method: 'POST',
         body: formData
       });
@@ -366,6 +367,7 @@
       if (data.success) {
         formSuccess.style.display = 'flex';
         form.reset();
+        if (window.turnstile) window.turnstile.reset();
         setAnon(false);
         formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } else {
@@ -373,6 +375,7 @@
       }
     } catch (err) {
       formError.style.display = 'flex';
+      if (window.turnstile) window.turnstile.reset();
     } finally {
       submitBtn.disabled = false;
       submitLabel.textContent = 'Anliegen senden';
@@ -382,6 +385,9 @@
   });
 </script>
 
+
+<!-- TURNSTILE -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 <!-- SCROLL TO TOP -->
 <button class="scroll-top" id="scrollTop" aria-label="Nach oben" title="Nach oben">

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
   <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline' https://api.web3forms.com; connect-src 'self' https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self';">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -122,8 +122,16 @@
         <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage auf den Abschluss oder die Durchführung eines Vertrags gerichtet ist. In allen übrigen Fällen erfolgt die Verarbeitung auf Grundlage unseres berechtigten Interesses gemäß Art. 6 Abs. 1 lit. f DSGVO an der Bearbeitung Ihrer Anfrage. Die Datenschutz-Checkbox dient dem Nachweis der Kenntnisnahme dieser Datenschutzhinweise.
       </p>
       <p style="margin-top:0.75rem;">
-        <strong>Drittanbieter – Web3Forms:</strong><br>
-        Das Formular nutzt den Dienst <strong>Web3Forms</strong> (Anbieter: Web3Creative, Kerala, Indien; web3forms.com) zur technischen Übermittlung Ihrer Nachricht. Die eingegebenen Daten werden über Server von Web3Forms in den USA (US-East) verarbeitet und anschließend per E-Mail an uns weitergeleitet. Web3Forms speichert die übermittelten Formulardaten nicht dauerhaft; Server-Logs werden nach eigenen Angaben spätestens alle zwei Monate gelöscht. Da Web3Forms seinen Sitz außerhalb der EU hat, erfolgt eine Datenübermittlung in ein Drittland. Ein formeller Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO wird von Web3Forms derzeit nicht angeboten; die Nutzung des Dienstes erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer funktionierenden Kontaktmöglichkeit). Weitere Informationen: <a href="https://web3forms.com/privacy" target="_blank" rel="noopener" class="legal-link">https://web3forms.com/privacy</a>
+        <strong>Technische Formularverarbeitung – Cloudflare Workers:</strong><br>
+        Ihre Formulardaten werden beim Absenden von einem <strong>Cloudflare Worker</strong> verarbeitet – einem serverseitigen Skript auf der Infrastruktur von Cloudflare (Cloudflare Inc., 101 Townsend St., San Francisco, CA, USA). Der Worker empfängt die übermittelten Daten, prüft den Spam-Schutz und leitet Ihre Nachricht per E-Mail weiter. Eine dauerhafte Speicherung der Formulardaten durch den Worker findet nicht statt. Mit Cloudflare wurde ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO abgeschlossen. Für Datenübermittlungen in die USA gelten EU-Standardvertragsklauseln sowie – sofern anwendbar – eine Zertifizierung nach dem EU-US Data Privacy Framework. Weitere Informationen: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener" class="legal-link">https://www.cloudflare.com/privacypolicy/</a>
+      </p>
+      <p style="margin-top:0.75rem;">
+        <strong>E-Mail-Versand – Resend:</strong><br>
+        Die Weiterleitung Ihrer Nachricht per E-Mail erfolgt über den Dienst <strong>Resend</strong> (Anbieter: Resend Inc., San Francisco, CA, USA; E-Mail-Infrastruktur: AWS eu-west-1, Irland). Resend verarbeitet die Daten ausschließlich zum Zweck des E-Mail-Versands und speichert Formulardaten nicht dauerhaft. Eine Datenübermittlung in Drittländer außerhalb der EU findet im Rahmen des E-Mail-Versands nicht statt, da die Verarbeitung auf EU-Servern erfolgt. Mit Resend wurde ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO abgeschlossen. Weitere Informationen: <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener" class="legal-link">https://resend.com/legal/privacy-policy</a>
+      </p>
+      <p style="margin-top:0.75rem;">
+        <strong>Spam-Schutz – Cloudflare Turnstile:</strong><br>
+        Zum Schutz vor automatisierten Formulareingaben setzen wir <strong>Cloudflare Turnstile</strong> ein – eine datenschutzfreundliche Alternative zu herkömmlichen CAPTCHAs. Turnstile setzt keine dauerhaften Tracking-Cookies und erstellt keine Nutzerprofile. Zur Spam-Erkennung werden technische Signale des Browsers anonymisiert ausgewertet. Anbieter ist Cloudflare Inc. (siehe oben); der bestehende AVV gemäß Art. 28 DSGVO gilt auch für Turnstile. Weitere Informationen: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener" class="legal-link">https://www.cloudflare.com/privacypolicy/</a>
       </p>
       <p style="margin-top:0.75rem;">
         <strong>Speicherdauer:</strong> Die Daten werden spätestens nach Abschluss der Bearbeitung gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
@@ -159,7 +167,7 @@
         <li>Sie haben ausdrücklich eingewilligt (Art. 6 Abs. 1 lit. a DSGVO),</li>
         <li>die Weitergabe ist zur Vertragserfüllung erforderlich (Art. 6 Abs. 1 lit. b DSGVO),</li>
         <li>eine gesetzliche Verpflichtung besteht (Art. 6 Abs. 1 lit. c DSGVO),</li>
-        <li>die Weitergabe ist im Rahmen einer Auftragsverarbeitung erforderlich (Art. 28 DSGVO) – dies gilt für Cloudflare (CDN) als technischen Dienstleister, mit dem ein AVV gemäß Art. 28 DSGVO abgeschlossen wurde. GitHub Pages und Web3Forms werden auf Grundlage eines berechtigten Interesses gemäß Art. 6 Abs. 1 lit. f DSGVO genutzt (siehe Abschnitt 4 bzw. 5).</li>
+        <li>die Weitergabe ist im Rahmen einer Auftragsverarbeitung erforderlich (Art. 28 DSGVO) – dies gilt für Cloudflare (CDN, Workers, Turnstile) und Resend (E-Mail-Versand) als technische Dienstleister, mit denen jeweils ein AVV gemäß Art. 28 DSGVO abgeschlossen wurde. GitHub Pages wird auf Grundlage eines berechtigten Interesses gemäß Art. 6 Abs. 1 lit. f DSGVO genutzt (siehe Abschnitt 4).</li>
       </ul>
     </div>
 
