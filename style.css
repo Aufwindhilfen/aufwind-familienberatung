@@ -2341,6 +2341,15 @@ p.form-section-label {
   gap: 48px;
   align-items: flex-start;
 }
+.team-photo-img {
+  width: 180px;
+  min-width: 180px;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
 .team-photo-placeholder {
   width: 180px;
   min-width: 180px;
@@ -2548,6 +2557,7 @@ p.form-section-label {
   .ibt-step            { flex: 1 1 100%; }
 
   /* Über uns */
+  .team-photo-img         { width: 100%; min-width: unset; aspect-ratio: 4 / 3; border-radius: 14px; }
   .team-photo-placeholder { width: 100%; min-width: unset; aspect-ratio: 4 / 3; border-radius: 14px; }
   .quali-grid          { grid-template-columns: 1fr; }
   .werte-grid          { grid-template-columns: 1fr; }
